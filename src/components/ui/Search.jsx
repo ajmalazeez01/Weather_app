@@ -14,16 +14,16 @@ function Search({onSearchChange}) {
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log(res); // Log the response for debugging purposes
+        console.log(res); 
   
         const options = res.data.map((city) => ({
           value: `${city.latitude} ${city.longitude}`,
           label: `${city.name}, ${city.countryCode}`,
         }));
   
-        console.log(options); // Log the transformed options for debugging purposes
+        console.log(options); 
   
-        return { options }; // Return an object with "options" property
+        return { options };
       })
       .catch((err) => console.error(err));
   };

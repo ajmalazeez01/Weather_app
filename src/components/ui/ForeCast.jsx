@@ -1,5 +1,3 @@
-
-
 import React from "react";
 
 function ForeCast({ data }) {
@@ -12,26 +10,38 @@ function ForeCast({ data }) {
     "Saturday",
     "Sunday",
   ];
-  const dayInAWeek = new Date().getDate();
+  const dayInAWeek = new Date().getDay();
   const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
     WEEK_DAYS.slice(0, dayInAWeek)
   );
-  //   console.log(data.list.splice(0, 7).length )
+  
   return (
-    <div className=" bg-white mt-8 mx-6 rounded-xl">
-      {data.list.splice(0, 7).length === 0 ? (
+    <div 
+    style={{ backgroundImage: `url(assets/images/joy-stamp-pGQbWXBC1dA-unsplash.jpg)`,
+       backgroundSize: 'cover',
+       backgroundPosition: 'center',
+       backgroundRepeat: 'no-repeat',
+       
+       
+     }}
+    className="  mt-8 mx-6 rounded-xl m-5">
+      <div 
+      className="backdrop-blur-2xl rounded-xl ">
+
+      {data.list?.splice(0, 7).length === 0 ? (
         ""
       ) : (
-        <p className="text-black  text-xl font-extrabold py-2 px-2">
+        <p className="text-white  text-xl font-extrabold py-2 px-2">
           7 Days Forecast{" "}
         </p>
       )}
-      <div className="text-white grid grid-cols-4 text-center">
-        {data.list.splice(0, 7).map((item, idx) => (
-          <div
+      <div className="  p-3 text-white font-extrabold grid md:grid-cols-4 text-center">
+        {data?.list?.splice(0, 7).map((item, idx) => (
+          <div 
             key={idx}
-            className="bg-slate-700 p-3.5 mx-3.5 my-3.5 flex flex-col items-center rounded-xl "
+            className=" border backdrop-blur-none  p-3.5 mx-3.5 my-3.5 flex flex-col items-center rounded-xl "
           >
+            
             <img
               src={`assets/images/${item.weather[0].icon}.png`}
               alt="weather"
@@ -42,6 +52,7 @@ function ForeCast({ data }) {
           </div>
         ))}
       </div>
+        </div>
     </div>
   );
 }
