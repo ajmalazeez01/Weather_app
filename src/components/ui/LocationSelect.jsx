@@ -47,7 +47,7 @@ function LocationSelect({ selectLocation, toggler, setToggler, search }) {
       setPermissionDenied(true);
       alert("Geolocation is not supported by this browser.");
     }
-  }, [toggler,selectLocation,setToggler ]);
+  }, [toggler]);
 
   return (
     <div

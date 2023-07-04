@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function CurrentWether({ data }) {
-  console.log(data);
+  // const [faviconPath, setFaviconPath] = useState( );
+
+  useEffect(() => {
+    const link = document.querySelector("link[rel~='icon']");
+
+    if (link) {
+      link.href = `assets/images/${data?.weather[0]?.icon}.png`?`assets/images/${data?.weather[0]?.icon}.png`:"assets/images/unknown.png";
+    }
+  }, []);
   return (
     <div className="text-white mx-auto md:mt-8 mt-4 w-full  ">
       <div
