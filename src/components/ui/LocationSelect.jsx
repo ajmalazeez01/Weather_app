@@ -4,9 +4,10 @@ import { GEO_API_URL, geoApiOptions } from "../api/api";
 function LocationSelect({ selectLocation, toggler, setToggler, search }) {
   const [permissionDenied, setPermissionDenied] = useState(false);
   console.log(navigator.geolocation);
+/* eslint-disable */
 
-  useEffect(() => {
-    if (navigator.geolocation) {
+useEffect(() => {
+  if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         function (position) {
           const lat = position.coords.latitude;
@@ -48,6 +49,7 @@ function LocationSelect({ selectLocation, toggler, setToggler, search }) {
       alert("Geolocation is not supported by this browser.");
     }
   }, [toggler]);
+  /* eslint-enable */
 
   return (
     <div

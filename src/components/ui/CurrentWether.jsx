@@ -1,15 +1,24 @@
 import React, { useEffect } from "react";
 
 function CurrentWether({ data }) {
-  // const [faviconPath, setFaviconPath] = useState( );
+  // const [faviconPath, setFaviconPath] = useState( "assets/images/unknown.png`");
+  // if(`assets/images/${data?.weather[0]?.icon}.png` ) setFaviconPath(`assets/images/${data?.weather[0]?.icon}.png` )
 
-  useEffect(() => {
-    const link = document.querySelector("link[rel~='icon']");
 
-    if (link) {
-      link.href = `assets/images/${data?.weather[0]?.icon}.png`?`assets/images/${data?.weather[0]?.icon}.png`:"assets/images/unknown.png";
-    }
-  }, []);
+
+/* eslint-disable */
+
+useEffect(() => {
+  const link = document.querySelector("link[rel~='icon']");
+
+  if (link) {
+    link.href = `assets/images/${data?.weather[0]?.icon}.png` ;
+  }
+  
+}, []);
+/* eslint-enable */
+
+
   return (
     <div className="text-white mx-auto md:mt-8 mt-4 w-full  ">
       <div
@@ -32,6 +41,7 @@ function CurrentWether({ data }) {
             </p>
           </div>
           <div className="my-auto mx:auto">
+            {/* {setFaviconPath(()=>`assets/images/${data?.weather[0]?.icon}.png`)} */}
             <img
               src={`assets/images/${data?.weather[0]?.icon}.png`}
               alt="sunny"
