@@ -40,23 +40,9 @@ function WetherrAppPages() {
   const handleClick = () => {
     setLocation(true);
   };
-  console.log(location);
   return (
     <>
-      {spinner ? (
-        <div className="w-full h-screen flex justify-center items-center backdrop-blur-2xl">
-          <BallTriangle
-            height={150}
-            width={150}
-            radius={5}
-            color="#fff"
-            ariaLabel="ball-triangle-loading"
-            wrapperClass={{}}
-            wrapperStyle=""
-            visible={true}
-          />
-        </div>
-      ) : (
+      
         <div className="flex flex-col items-center w-full min-h-screen backdrop-blur-sm ">
           <div className="flex">
             <Search onSearchChange={{ handilOnSearchChange }} />
@@ -75,15 +61,29 @@ function WetherrAppPages() {
             setToggler={setLocation}
             search={currentWether}
           />
-
+{spinner ? (
+        <div className="w-full h-screen flex justify-center items-center backdrop-blur-2xl">
+          <BallTriangle
+            height={150}
+            width={150}
+            radius={5}
+            color="#fff"
+            ariaLabel="ball-triangle-loading"
+            wrapperClass={{}}
+            wrapperStyle=""
+            visible={true}
+          />
+        </div>
+      ) : (
           <div className=" w-full">
             <div className="w-full">
               {currentWether && <CurrentWether data={currentWether} />}
               {forecast && <ForeCast data={forecast} />}
             </div>
           </div>
+          )}
         </div>
-      )}
+      
     </>
   );
 }

@@ -3,7 +3,6 @@ import { GEO_API_URL, geoApiOptions } from "../api/api";
 
 function LocationSelect({ selectLocation, toggler, setToggler, search }) {
   const [permissionDenied, setPermissionDenied] = useState(false);
-  console.log(navigator.geolocation);
 /* eslint-disable */
 
 useEffect(() => {

@@ -1,8 +1,7 @@
 import React, { useEffect } from "react";
 
 function CurrentWether({ data }) {
-  // const [faviconPath, setFaviconPath] = useState( "assets/images/unknown.png`");
-  // if(`assets/images/${data?.weather[0]?.icon}.png` ) setFaviconPath(`assets/images/${data?.weather[0]?.icon}.png` )
+
 
 
 
