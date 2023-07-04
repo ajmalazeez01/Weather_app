@@ -25,7 +25,6 @@ function LocationSelect({ selectLocation, toggler, setToggler, search }) {
                 label: `${city.name}, ${city.countryCode}`,
               }));
 
-              console.log(options);
               setPermissionDenied(false);
               setToggler(false);
 
@@ -52,14 +51,14 @@ function LocationSelect({ selectLocation, toggler, setToggler, search }) {
 
   return (
     <div
-    style={{ backgroundImage: `url(assets/images/joy-stamp-pGQbWXBC1dA-unsplash.jpg)`,
-       backgroundSize: 'cover',
-       backgroundPosition: 'center',
-       backgroundRepeat: 'no-repeat',
-       
-       
-     }}
-    className="  rounded-3xl flex justify-center items-center w-2/4">
+      style={{
+        backgroundImage: `url(assets/images/joy-stamp-pGQbWXBC1dA-unsplash.jpg)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+      className="  rounded-3xl flex justify-center items-center w-2/4"
+    >
       {permissionDenied && !search && (
         <div className=" backdrop-blur-lg w-full rounded-3xl    p-5 flex flex-col justify-center items-center   h-80 self-center ">
           <img

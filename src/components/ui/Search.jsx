@@ -1,10 +1,8 @@
-
-
 import React, { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
-import { GEO_API_URL ,geoApiOptions } from "../api/api";
+import { GEO_API_URL, geoApiOptions } from "../api/api";
 
-function Search({onSearchChange}) {
+function Search({ onSearchChange }) {
   const [search, setSearch] = useState(null);
 
   const loadOptions = (inputValue) => {
@@ -14,28 +12,24 @@ function Search({onSearchChange}) {
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log(res); 
-  
+        console.log(res);
+
         const options = res.data.map((city) => ({
           value: `${city.latitude} ${city.longitude}`,
           label: `${city.name}, ${city.countryCode}`,
         }));
-  
-        console.log(options); 
-  
-        return { options };
+
+        console.log(options);
+
+        return { options: options };
       })
       .catch((err) => console.error(err));
   };
-  
-  
-  
 
   const handleOnChange = (searchData) => {
     setSearch(searchData);
-    onSearchChange.handilOnSearchChange(searchData)
+    onSearchChange.handilOnSearchChange(searchData);
   };
-  
 
   const styles = {
     control: (baseStyles, state) => ({
