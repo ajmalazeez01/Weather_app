@@ -8,12 +8,27 @@ function CurrentWether({ data }) {
 /* eslint-disable */
 
 useEffect(() => {
-  const link = document.querySelector("link[rel~='icon']");
+  // const link = document.querySelector("link[rel~='icon']");
 
-  if (link) {
-    link.href = `assets/images/${data?.weather[0]?.icon}.png` ;
-  }
+  // if (link) {
+  //   link.href = `assets/images/${data?.weather[0]?.icon}.png` ;
+  // }
   
+
+
+  const link = document.querySelector("link[rel~='icon']");
+  
+  if (link) {
+    link.href = `assets/images/${data?.weather[0]?.icon}.png`;
+  } else {
+    const newLink = document.createElement('link');
+    newLink.rel = 'icon';
+    newLink.href = `assets/images/${data?.weather[0]?.icon}.png`;
+    document.head.appendChild(newLink);
+  }
+
+
+
 }, []);
 /* eslint-enable */
 

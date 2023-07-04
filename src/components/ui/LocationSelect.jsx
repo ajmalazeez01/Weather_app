@@ -58,7 +58,7 @@ useEffect(() => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-      className="  rounded-3xl flex justify-center items-center w-2/4"
+      className="  rounded-3xl mt-3 flex justify-center items-center w-2/4"
     >
       {permissionDenied && !search && (
         <div className=" backdrop-blur-lg w-full rounded-3xl    p-5 flex flex-col justify-center items-center   h-80 self-center ">
